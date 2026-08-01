@@ -110,10 +110,10 @@ export default function HeroSection() {
                   { value: "6+", label: "Products", color: "text-[#1e3a8a]" },
                   { value: "100%", label: "Quality", color: "text-[#dc2626]" },
                   { value: "GMP", label: "Certified", color: "text-[#1e3a8a]" },
-                  { value: "🇪🇬", label: "Made in Egypt", color: "text-[#0f172a]" },
+                  { value: "Egypt", label: "Made in Egypt", color: "text-[#dc2626]" },
                 ].map((item, i) => (
                   <div key={i} className="rounded-2xl bg-[#fafbfc] p-4 text-center">
-                    <div className={`text-3xl font-bold ${item.color} mb-1`}>{item.value}</div>
+                    <div className={`text-2xl font-bold ${item.color} mb-1`}>{item.value}</div>
                     <div className="text-xs font-medium text-gray-500">{item.label}</div>
                   </div>
                 ))}
@@ -122,7 +122,7 @@ export default function HeroSection() {
               {/* Bottom Tag */}
               <div className="mt-6 text-center">
                 <p className="text-xs tracking-widest text-gray-400 uppercase">
-                  Specialized in Family Health & Nutritional Supplements
+                  Family Health &amp; Nutritional Supplements
                 </p>
               </div>
             </div>

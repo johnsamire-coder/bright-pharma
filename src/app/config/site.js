@@ -1,6 +1,6 @@
 /**
  * Bright Pharma - Site Configuration
- * ✅ CLIENT APPROVED DATA
+ *✅ CLIENT APPROVED DATA
  */
 
 export const siteConfig = {
@@ -10,6 +10,14 @@ export const siteConfig = {
   description:
     "A new generation pharmaceutical company specialized in family health and nutritional supplements, proudly made in Egypt.",
 
+  // Navigation Links
+  navigation: [
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Products", href: "/products" },
+    { name: "Contact", href: "/contact" },
+  ],
+
   // Contact Info (REAL DATA)
   contact: {
     phone: "01222620797",
@@ -18,7 +26,7 @@ export const siteConfig = {
     addressAr: "37 مصطفى باشا - الزيتون الشرقية - القاهرة",
   },
 
-  // Social Media (update when available)
+  // Social Media
   social: {
     facebook: "#",
     twitter: "#",
@@ -26,7 +34,7 @@ export const siteConfig = {
     instagram: "#",
   },
 
-  // Trust Bar Stats (REALISTIC - Smart Mix)
+  // Trust Bar Stats (REALISTIC)
   stats: [
     {
       value: "6+",
@@ -110,7 +118,7 @@ export const siteConfig = {
     },
   ],
 
-  // Why Choose Us (REALISTIC)
+  // Why Choose Us
   whyChooseUs: [
     {
       icon: "heart",
@@ -147,12 +155,28 @@ export const siteConfig = {
     },
   ],
 
-  // Certifications (REALISTIC)
+  // Certifications
   certifications: [
-    { name: "GMP Certified", icon: "award", desc: "Good Manufacturing Practice" },
-    { name: "Made in Egypt", icon: "flag", desc: "Proudly Local Production" },
-    { name: "Quality Assured", icon: "shield", desc: "Strict Quality Control" },
-    { name: "Family Safe", icon: "heart", desc: "Safe for All Ages" },
+    {
+      name: "GMP Certified",
+      icon: "award",
+      desc: "Good Manufacturing Practice",
+    },
+    {
+      name: "Made in Egypt",
+      icon: "flag",
+      desc: "Proudly Local Production",
+    },
+    {
+      name: "Quality Assured",
+      icon: "shield",
+      desc: "Strict Quality Control",
+    },
+    {
+      name: "Family Safe",
+      icon: "heart",
+      desc: "Safe for All Ages",
+    },
   ],
 };
 
