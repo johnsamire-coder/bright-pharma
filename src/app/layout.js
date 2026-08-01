@@ -1,5 +1,7 @@
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -16,7 +18,10 @@ const playfair = Playfair_Display({
 });
 
 export const metadata = {
-  title: "Bright Pharma | Human Health Is Our Mission",
+  title: {
+    default: "Bright Pharma | Human Health Is Our Mission",
+    template: "%s | Bright Pharma",
+  },
   description:
     "Bright Pharma is a leading pharmaceutical company dedicated to improving human health through innovative and reliable medical solutions.",
   keywords: [
@@ -27,6 +32,9 @@ export const metadata = {
     "Egypt Pharma",
     "Medical Solutions",
     "Human Health",
+    "Drugs",
+    "Vitamins",
+    "Antibiotics",
   ],
   authors: [{ name: "Bright Pharma" }],
   creator: "Bright Pharma",
@@ -49,7 +57,7 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: "#0a0e1a",
+  themeColor: "#1e3a8a",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -58,7 +66,11 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="antialiased">{children}</body>
+      <body className="flex min-h-screen flex-col bg-white antialiased">
+        <Navbar />
+        <main className="flex-1 pt-20 lg:pt-24">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
