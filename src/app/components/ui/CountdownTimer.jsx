@@ -46,12 +46,15 @@ export default function CountdownTimer({ targetDate }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 + index * 0.1, duration: 0.6 }}
-          className="glass-strong group rounded-2xl p-4 text-center transition-transform duration-300 hover:scale-105 md:p-6"
+          className="group relative rounded-2xl border border-gray-200 bg-white p-4 text-center shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl md:p-6"
         >
-          <div className="gradient-text-simple font-mono text-3xl font-bold md:text-5xl lg:text-6xl">
+          {/* Top gradient accent */}
+          <div className="absolute top-0 right-4 left-4 h-1 rounded-full bg-gradient-to-r from-[#1e3a8a] to-[#dc2626] opacity-70" />
+
+          <div className="bg-gradient-to-br from-[#1e3a8a] to-[#dc2626] bg-clip-text font-mono text-3xl font-bold text-transparent md:text-5xl lg:text-6xl">
             {String(unit.value).padStart(2, "0")}
           </div>
-          <div className="mt-2 text-xs font-medium tracking-wider text-white/60 uppercase md:text-sm">
+          <div className="mt-2 text-xs font-semibold tracking-wider text-gray-500 uppercase md:text-sm">
             {unit.label}
           </div>
         </motion.div>

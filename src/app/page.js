@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { siteConfig } from "./config/site";
 import CountdownTimer from "./components/ui/CountdownTimer";
-import AnimatedBackground from "./components/ui/AnimatedBackground";
 
 // Social Media Icons as SVG
 const FacebookIcon = ({ size = 18 }) => (
@@ -69,16 +68,16 @@ export default function Home() {
   ];
 
   return (
-    <main className="relative min-h-screen overflow-hidden">
-      {/* Aurora Background */}
-      <div className="aurora-bg" />
+    <main className="relative min-h-screen overflow-hidden bg-white">
+      {/* Elegant Light Background */}
+      <div className="light-bg" />
 
-      {/* Animated Dots Background */}
-      <AnimatedBackground />
+      {/* Subtle Pattern Overlay */}
+      <div className="pattern-overlay" />
 
       {/* Main Content - Perfectly Centered */}
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 py-12">
-        {/* Badge - Elegant Circle Style with Safe Spacing */}
+        {/* Badge - Elegant Style */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -86,42 +85,41 @@ export default function Home() {
           className="mb-16"
         >
           <div className="group relative cursor-default">
-            {/* Outer Glow Ring */}
-            <div className="animate-glow-pulse absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/40 via-purple-500/40 to-red-500/40 opacity-70 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
+            {/* Soft Glow */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#1e3a8a]/20 via-[#dc2626]/20 to-[#1e3a8a]/20 opacity-60 blur-lg transition-opacity duration-500 group-hover:opacity-80" />
 
-            {/* Main Badge Circle */}
-            <div className="glass-strong relative flex items-center gap-3 rounded-full border border-white/20 px-6 py-3 shadow-2xl">
-              {/* Animated Sparkle */}
+            {/* Main Badge */}
+            <div className="relative flex items-center gap-3 rounded-full border border-gray-200 bg-white px-6 py-3 shadow-lg">
+              {/* Sparkle Icon */}
               <div className="relative">
-                <div className="absolute inset-0 animate-pulse rounded-full bg-blue-400 blur-md" />
-                <Sparkles size={18} className="relative text-blue-300" />
+                <Sparkles size={18} className="text-[#dc2626]" />
               </div>
 
               {/* Text */}
-              <span className="text-sm font-medium tracking-wide text-white/90 md:text-base">
+              <span className="text-sm font-semibold tracking-wide text-[#1e3a8a] md:text-base">
                 Something Great Is Coming
               </span>
 
               {/* Pulsing Dot */}
               <div className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-500" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#dc2626] opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#dc2626]" />
               </div>
             </div>
           </div>
         </motion.div>
 
-        {/* Logo with Elegant Glow - Contained Float Area */}
+        {/* Logo (Original with white background - now blends perfectly) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, duration: 0.8, type: "spring" }}
           className="relative mb-10"
         >
-          {/* Radial Glow Behind Logo */}
-          <div className="bg-gradient-radial animate-glow-pulse pointer-events-none absolute inset-0 -inset-x-20 -inset-y-10 from-blue-500/30 via-blue-500/10 to-transparent blur-3xl" />
+          {/* Soft Blue Glow Behind Logo */}
+          <div className="bg-gradient-radial animate-glow-pulse pointer-events-none absolute inset-0 -inset-x-16 -inset-y-8 from-[#1e3a8a]/10 via-[#dc2626]/5 to-transparent blur-2xl" />
 
-          {/* Logo with transparent background */}
+          {/* Logo */}
           <div className="animate-float relative">
             <Image
               src="/images/logo/bright-pharma-logo.png"
@@ -129,7 +127,7 @@ export default function Home() {
               width={400}
               height={140}
               priority
-              className="h-24 w-auto object-contain drop-shadow-[0_0_30px_rgba(59,130,246,0.5)] md:h-32 lg:h-40"
+              className="h-24 w-auto object-contain md:h-32 lg:h-40"
             />
           </div>
         </motion.div>
@@ -139,10 +137,12 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="gradient-text-simple mb-4 text-center text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl"
+          className="mb-4 text-center text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl"
           style={{ fontFamily: "var(--font-playfair)" }}
         >
-          Launching Soon
+          <span className="bg-gradient-to-r from-[#1e3a8a] via-[#3b82f6] to-[#dc2626] bg-clip-text text-transparent">
+            Launching Soon
+          </span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -150,10 +150,10 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="mb-12 max-w-2xl px-4 text-center text-base leading-relaxed text-white/70 md:text-xl"
+          className="mb-12 max-w-2xl px-4 text-center text-base leading-relaxed text-gray-600 md:text-xl"
         >
           We are crafting an exceptional pharmaceutical experience for you.{" "}
-          <span className="font-semibold text-blue-400">Human Health Is Our Mission</span>
+          <span className="font-semibold text-[#dc2626]">Human Health Is Our Mission</span>
         </motion.p>
 
         {/* Countdown Timer - Perfectly Centered */}
@@ -169,7 +169,9 @@ export default function Home() {
         transition={{ delay: 1.2, duration: 0.6 }}
         className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-3"
       >
-        <p className="text-[10px] font-medium tracking-widest text-white/40 uppercase">Follow Us</p>
+        <p className="text-[10px] font-semibold tracking-widest text-gray-500 uppercase">
+          Follow Us
+        </p>
         <div className="flex items-center gap-3">
           {socialLinks.map((social) => {
             const IconComponent = social.Icon;
@@ -178,14 +180,14 @@ export default function Home() {
                 key={social.label}
                 href={social.href}
                 aria-label={social.label}
-                className="glass group rounded-full p-3 text-white/70 transition-all duration-300 hover:scale-110 hover:bg-white/10 hover:text-white"
+                className="rounded-full border border-gray-200 bg-white p-3 text-[#1e3a8a] shadow-md transition-all duration-300 hover:scale-110 hover:border-[#1e3a8a] hover:text-[#dc2626] hover:shadow-lg"
               >
                 <IconComponent size={18} />
               </a>
             );
           })}
         </div>
-        <p className="mt-1 text-[10px] text-white/30">
+        <p className="mt-1 text-[10px] text-gray-400">
           © {new Date().getFullYear()} {siteConfig.name}
         </p>
       </motion.div>
