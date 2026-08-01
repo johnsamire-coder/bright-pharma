@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, Mail, MapPin, ArrowRight, Send } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowRight, Send, Code2 } from "lucide-react";
 
 const quickLinks = [
   { name: "Home", href: "/" },
@@ -20,7 +20,6 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Column 1: Logo & Description */}
           <div className="lg:col-span-1">
-            {/* Logo */}
             <div className="mb-5">
               <Image
                 src="/images/logo/bright-pharma-logo.png"
@@ -31,7 +30,6 @@ export default function Footer() {
               />
             </div>
 
-            {/* Description */}
             <p className="mb-6 text-sm leading-relaxed text-gray-400">
               A new generation pharmaceutical company specialized in family health and nutritional
               supplements, proudly made in Egypt.
@@ -108,7 +106,7 @@ export default function Footer() {
               <li>
                 <a
                   href="tel:+201222620797"
-                  className="group flex items-start gap-3 text-gray-400 transition-colors duration-300 hover:text-white"
+                  className="flex items-start gap-3 text-gray-400 transition-colors duration-300 hover:text-white"
                 >
                   <Phone size={16} className="mt-0.5 shrink-0 text-[#dc2626]" />
                   <span className="text-sm">01222620797</span>
@@ -117,7 +115,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:brightpharma.co@gmail.com"
-                  className="group flex items-start gap-3 text-gray-400 transition-colors duration-300 hover:text-white"
+                  className="flex items-start gap-3 text-gray-400 transition-colors duration-300 hover:text-white"
                 >
                   <Mail size={16} className="mt-0.5 shrink-0 text-[#dc2626]" />
                   <span className="text-sm break-all">brightpharma.co@gmail.com</span>
@@ -159,14 +157,40 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
+      {/* Bottom Bar - with Developer Credit */}
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 py-6 md:px-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <p className="text-xs text-gray-500">
+            {/* Copyright */}
+            <p className="text-center text-xs text-gray-500 md:text-left">
               &copy; {new Date().getFullYear()} Bright Pharma. All rights reserved.
             </p>
-            <p className="text-xs text-gray-600">Human Health Is Our Mission</p>
+
+            {/* Developer Credit - Elegant */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="flex items-center gap-2 text-xs"
+            >
+              <Code2 size={12} className="text-[#dc2626]" />
+              <span className="text-gray-500">Designed &amp; Developed by</span>
+              <a
+                href="https://wa.me/201501551593"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-1 font-semibold text-white transition-colors duration-300 hover:text-[#dc2626]"
+              >
+                <span className="bg-gradient-to-r from-[#3b82f6] to-[#dc2626] bg-clip-text font-bold text-transparent">
+                  JS Solutions
+                </span>
+                <ArrowRight
+                  size={10}
+                  className="text-[#dc2626] opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100"
+                />
+              </a>
+            </motion.div>
           </div>
         </div>
       </div>
